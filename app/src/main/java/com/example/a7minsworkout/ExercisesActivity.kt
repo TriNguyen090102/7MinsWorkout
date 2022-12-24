@@ -4,17 +4,15 @@ import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.view.View
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
 import com.example.a7minsworkout.databinding.ActivityExercisesBinding
 import com.example.a7minsworkout.databinding.DialogCustomBackConfirmationBinding
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class ExercisesActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
@@ -175,7 +173,7 @@ class ExercisesActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 exerciseList!![currentExercisePosition].setIsSelected(false)
                 exerciseList!![currentExercisePosition].setIsCompleted(true)
                 exerciseStatusAdapter!!.notifyDataSetChanged()
-                if(currentExercisePosition!! < exerciseList!!.size - 1) {
+                if(currentExercisePosition < exerciseList!!.size - 1) {
                     currentExercisePosition++
                     setupRestView()
                 } else {
